@@ -38,7 +38,7 @@ public class CourseGradeDialog extends JDialog
     /**
      * The pane to control the dialog
      */
-    private GradeRegistrationButtonPane gradeRegistrationButtonPane;
+    private GradeRegistrationButtonsPane gradeRegistrationButtonPane;
 
     // -----------------------------------------------------------------
     // Constructor methods
@@ -60,7 +60,7 @@ public class CourseGradeDialog extends JDialog
 
         // Dialog panes
         gradeRegistrationPane = new GradeRegistrationPane( );
-        gradeRegistrationButtonPane = new GradeRegistrationButtonPane( this );
+        gradeRegistrationButtonPane = new GradeRegistrationButtonsPane( this );
         add( gradeRegistrationPane, BorderLayout.NORTH );
         add( gradeRegistrationButtonPane, BorderLayout.CENTER );
         setSize( 300, 165 );

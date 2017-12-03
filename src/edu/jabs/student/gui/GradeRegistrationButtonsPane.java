@@ -52,7 +52,7 @@ public class GradeRegistrationButtonsPane extends JPanel implements ActionListen
      * Creates the pane where the grade registration button will be located
      * @param theFather - instance of the container dialog - theFather!=null
      */
-    public GradeRegistrationButtonPane( CourseGradeDialog theFather )
+    public GradeRegistrationButtonsPane( CourseGradeDialog theFather )
     {
         father = theFather;
 
