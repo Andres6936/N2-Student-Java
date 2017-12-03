@@ -12,7 +12,7 @@ import javax.swing.JPanel;
 /**
  * Pane which contains the button for a grade allocation
  */
-public class GradeRegistrationButtonPane extends JPanel implements ActionListener
+public class GradeRegistrationButtonsPane extends JPanel implements ActionListener
 {
     // -----------------------------------------------------------------
     // Constants
