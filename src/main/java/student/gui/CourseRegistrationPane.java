@@ -17,34 +17,19 @@ public class CourseRegistrationPane extends JPanel
     // -----------------------------------------------------------------
 
     /**
-     * Name's Label
-     */
-    private JLabel nameLabel;
-
-    /**
-     * Credits' Label
-     */
-    private JLabel creditsLabel;
-
-    /**
-     * Course's Code Label
-     */
-    private JLabel courseCodeLabel;
-
-    /**
      * Field for the name
      */
-    private JTextField nameField;
+    private final JTextField nameField;
 
     /**
      * Field for the number of credits
      */
-    private JTextField creditsField;
+    private final JTextField creditsField;
 
     /**
      * Field for the code of the course
      */
-    private JTextField courseCodeField;
+    private final JTextField courseCodeField;
 
     // -----------------------------------------------------------------
     // Constructor methods
@@ -54,36 +39,40 @@ public class CourseRegistrationPane extends JPanel
      */
     public CourseRegistrationPane( )
     {
-        setBorder( javax.swing.BorderFactory.createTitledBorder( null, "Course Data", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, null, null ) );
-        setLayout( new GridLayout( 5, 0 ) );
+        setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Course Data", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, null, null));
+        setLayout(new GridLayout(5, 0));
         // Field where the course's name will be
-        nameField = new JTextField( );
+        nameField = new JTextField();
         // Field for the course's code
-        courseCodeField = new JTextField( );
+        courseCodeField = new JTextField();
         // Field for the course's credits
-        creditsField = new JTextField( );
+        creditsField = new JTextField();
         // Fields for the data registration
-        courseCodeLabel = new JLabel( );
-        nameLabel = new JLabel( );
-        creditsLabel = new JLabel( );
 
-        nameLabel.setText( "Name" );
+        // Course's Code Label
+        JLabel courseCodeLabel = new JLabel();
+        // Name's Label
+        JLabel nameLabel = new JLabel();
+        // Credits' Label
+        JLabel creditsLabel = new JLabel();
 
-        courseCodeLabel.setText( "Course's code" );
+        nameLabel.setText("Name");
 
-        creditsLabel.setText( "Credits" );
+        courseCodeLabel.setText("Course's code");
 
-        add( nameLabel );
-        add( nameField );
-        add( courseCodeLabel );
-        add( courseCodeField );
-        add( creditsLabel );
-        add( creditsField );
+        creditsLabel.setText("Credits");
 
-        add( new JLabel( "" ) );// label to generate order in the grid
-        add( new JLabel( "" ) );// label to generate order in the grid
-        add( new JLabel( "" ) );// label to generate order in the grid
-        add( new JLabel( "" ) );// label to generate order in the grid
+        add(nameLabel);
+        add(nameField);
+        add(courseCodeLabel);
+        add(courseCodeField);
+        add(creditsLabel);
+        add(creditsField);
+
+        add(new JLabel(""));// label to generate order in the grid
+        add(new JLabel(""));// label to generate order in the grid
+        add(new JLabel(""));// label to generate order in the grid
+        add(new JLabel(""));// label to generate order in the grid
     }
 
     // -----------------------------------------------------------------
