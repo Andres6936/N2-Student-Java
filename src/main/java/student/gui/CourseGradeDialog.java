@@ -19,7 +19,7 @@ public class CourseGradeDialog extends JDialog
     /**
      * Instance of the GUI's principal class
      */
-    private StudentGUI father;
+    private final StudentGUI father;
 
     /**
      * Graded course
@@ -33,12 +33,7 @@ public class CourseGradeDialog extends JDialog
     /**
      * The pane where the grade is registered
      */
-    private GradeRegistrationPane gradeRegistrationPane;
-
-    /**
-     * The pane to control the dialog
-     */
-    private GradeRegistrationButtonsPane gradeRegistrationButtonPane;
+    private final GradeRegistrationPane gradeRegistrationPane;
 
     // -----------------------------------------------------------------
     // Constructor methods
@@ -54,16 +49,18 @@ public class CourseGradeDialog extends JDialog
         course = null;
 
         // Dialog configuration
-        setTitle( "Grade Registration" );
-        setBackground( Color.white );
-        setLayout( new BorderLayout( ) );
+        setTitle("Grade Registration");
+        setBackground(Color.white);
+        setLayout(new BorderLayout());
 
         // Dialog panes
-        gradeRegistrationPane = new GradeRegistrationPane( );
-        gradeRegistrationButtonPane = new GradeRegistrationButtonsPane( this );
-        add( gradeRegistrationPane, BorderLayout.NORTH );
-        add( gradeRegistrationButtonPane, BorderLayout.CENTER );
-        setSize( 300, 165 );
+        gradeRegistrationPane = new GradeRegistrationPane();
+
+        // The pane to control the dialog
+        GradeRegistrationButtonsPane gradeRegistrationButtonPane = new GradeRegistrationButtonsPane(this);
+        add(gradeRegistrationPane, BorderLayout.NORTH);
+        add(gradeRegistrationButtonPane, BorderLayout.CENTER);
+        setSize(300, 165);
 
     }
 
@@ -129,7 +126,6 @@ public class CourseGradeDialog extends JDialog
             if( courseGrade < 1.5 || courseGrade > 5.0 )
             {
                 JOptionPane.showMessageDialog( this, "The grade must be between 1.5 and 5.0", "Grade Registration", JOptionPane.ERROR_MESSAGE );
-                return;
             }
             else
             {
