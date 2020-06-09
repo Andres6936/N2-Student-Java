@@ -26,32 +26,27 @@ public class StudentGUI extends JFrame
     /**
      * It is the pane where the data to register a student are collected
      */
-    private StudentRegistrationPane studentRegistrationPane;
+    private final StudentRegistrationPane studentRegistrationPane;
 
     /**
      * It is the pane where the data of the student are shown
      */
-    private StudentDataPane studentDataPane;
-
-    /**
-     * It is the pane where the button to control the application are shown
-     */
-    private ButtonsPane buttonsPane;
+    private final StudentDataPane studentDataPane;
 
     /**
      * The dialog used to show the courses
      */
-    private CourseDialog courseDialog;
+    private final CourseDialog courseDialog;
 
     /**
      * The dialog used to register a new course
      */
-    private CourseRegistrationDialog courseRegistrationDialog;
+    private final CourseRegistrationDialog courseRegistrationDialog;
 
     /**
      * The dialog used to register a course's grade
      */
-    private CourseGradeDialog courseGradeDialog;
+    private final CourseGradeDialog courseGradeDialog;
 
     // -----------------------------------------------------------------
     // Attributes
@@ -70,34 +65,36 @@ public class StudentGUI extends JFrame
     public StudentGUI( )
     {
         // Configures border and background
-        setLayout( new BorderLayout( ) );
+        setLayout(new BorderLayout());
 
         // Creates the panes and dialogs
-        studentRegistrationPane = new StudentRegistrationPane( this );
-        studentDataPane = new StudentDataPane( );
-        buttonsPane = new ButtonsPane( this );
+        studentRegistrationPane = new StudentRegistrationPane(this);
+        studentDataPane = new StudentDataPane();
+
+        // It is the pane where the button to control the application are shown
+        ButtonsPane buttonsPane = new ButtonsPane(this);
 
         // Course registration dialog
-        courseRegistrationDialog = new CourseRegistrationDialog( );
-        courseRegistrationDialog.setModal( true );
+        courseRegistrationDialog = new CourseRegistrationDialog();
+        courseRegistrationDialog.setModal(true);
 
         // Dialog in which the courses are shown
-        courseDialog = new CourseDialog( );
-        courseDialog.setModal( true );
+        courseDialog = new CourseDialog();
+        courseDialog.setModal(true);
 
         // Course's grade dialog
-        courseGradeDialog = new CourseGradeDialog( this );
-        courseGradeDialog.setModal( true );
+        courseGradeDialog = new CourseGradeDialog(this);
+        courseGradeDialog.setModal(true);
 
-        add( studentRegistrationPane, BorderLayout.NORTH );
-        add( studentDataPane, BorderLayout.CENTER );
-        add( buttonsPane, BorderLayout.SOUTH );
+        add(studentRegistrationPane, BorderLayout.NORTH);
+        add(studentDataPane, BorderLayout.CENTER);
+        add(buttonsPane, BorderLayout.SOUTH);
 
         // Assign title, adjust the size and do not let it be modified
-        setTitle( "Student" );
-        pack( );
-        setResizable( false );
-        setDefaultCloseOperation( javax.swing.JFrame.EXIT_ON_CLOSE );
+        setTitle("Student");
+        pack();
+        setResizable(false);
+        setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
 
     }
 
@@ -216,20 +213,17 @@ public class StudentGUI extends JFrame
     /**
      * Indicates if the student is in academic test period or not
      */
-    public void studentInTest( )
+    public void studentInTest()
     {
-        double average = 0.0;
-        boolean inTest = false;
+        double average;
+        boolean inTest;
 
-        if( student == null )
-        {
-            JOptionPane.showMessageDialog( this, "You must register the student first", "Grade's average calculus", JOptionPane.ERROR_MESSAGE );
-        }
-        else
-        {
+        if (student == null) {
+            JOptionPane.showMessageDialog(this, "You must register the student first", "Grade's average calculus", JOptionPane.ERROR_MESSAGE);
+        } else {
 
-            average = student.getStudentAverage( );
-            inTest = student.studentInAcademicTestPeriod( );
+            average = student.getStudentAverage();
+            inTest = student.studentInAcademicTestPeriod();
 
             if( average == 0.0 )
             {
