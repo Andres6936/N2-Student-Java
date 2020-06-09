@@ -24,26 +24,12 @@ public class CourseRegistrationButtonsPane extends JPanel implements ActionListe
     private static final String ACCEPT = "ACCEPT";
 
     // -----------------------------------------------------------------
-    // GUI's attributes
-    // -----------------------------------------------------------------
-
-    /**
-     * Cancel button
-     */
-    private JButton cancelButton;
-
-    /**
-     * Accept button
-     */
-    private JButton acceptButton;
-
-    // -----------------------------------------------------------------
     // Attributes
     // -----------------------------------------------------------------
     /**
      * Instance of the dialog to which it belongs
      */
-    private CourseRegistrationDialog father;
+    private final CourseRegistrationDialog father;
 
     // -----------------------------------------------------------------
     // Constructor methods
@@ -56,17 +42,20 @@ public class CourseRegistrationButtonsPane extends JPanel implements ActionListe
     {
         father = theFather;
 
-        acceptButton = new JButton( );
-        cancelButton = new JButton( );
+        // Accept button
+        JButton acceptButton = new JButton();
 
-        initializeButtons( acceptButton, "Register", ACCEPT, Color.BLACK, KeyEvent.VK_E );
-        initializeButtons( cancelButton, "Cancel", CANCEL, Color.BLACK, KeyEvent.VK_R );
+        // Cancel button
+        JButton cancelButton = new JButton();
 
-        setLayout( new GridLayout( 1, 2, 1, 8 ) );
+        initializeButtons(acceptButton, "Register", ACCEPT, Color.BLACK, KeyEvent.VK_E);
+        initializeButtons(cancelButton, "Cancel", CANCEL, Color.BLACK, KeyEvent.VK_R);
+
+        setLayout(new GridLayout(1, 2, 1, 8));
 
         // Add the buttons
-        add( acceptButton );
-        add( cancelButton );
+        add(acceptButton);
+        add(cancelButton);
 
     }
 
