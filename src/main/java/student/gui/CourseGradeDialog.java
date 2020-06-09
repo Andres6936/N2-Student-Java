@@ -1,4 +1,4 @@
-package main.java.student.gui;
+package student.gui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -6,7 +6,7 @@ import java.awt.Color;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 
-import main.java.student.domain.Course;
+import student.domain.Course;
 
 /**
  * Dialog for a grade registration

@@ -1,4 +1,4 @@
-package main.java.student.domain;
+package student.domain;
 
 /**
  * Class modeling a student

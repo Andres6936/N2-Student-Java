@@ -1,4 +1,4 @@
-package main.java.student.gui;
+package student.gui;
 
 import java.awt.Color;
 import java.awt.GridLayout;
