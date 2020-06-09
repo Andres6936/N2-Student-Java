@@ -153,7 +153,6 @@ public class StudentGUI extends JFrame
         else if( student.hasCompletedCourses() )
         {
             JOptionPane.showMessageDialog( this, "The student courses are full", "Course Registration", JOptionPane.ERROR_MESSAGE );
-            return;
         }
         else
         {
@@ -282,7 +281,7 @@ public class StudentGUI extends JFrame
      */
     public void seeCourses( )
     {
-        ArrayList courses = new ArrayList( );
+        ArrayList<String> courses = new ArrayList<>();
         Course course = null;
         if( student != null )
         {

@@ -1,7 +1,5 @@
 package student.gui;
 
-import student.domain.Course;
-
 import java.awt.Color;
 import java.util.ArrayList;
 
@@ -22,7 +20,7 @@ public class CourseDialog extends JDialog
     /**
      * List where courses are shown
      */
-    private final JList<Course> coursesList;
+    private final JList<String> coursesList;
 
     // -----------------------------------------------------------------
     // Constructor methods
@@ -54,11 +52,12 @@ public class CourseDialog extends JDialog
 
     /**
      * Modifies the courses list shown
+     *
      * @param courses the list with the courses that will be shown in the List
      */
-    public void setListCourse( ArrayList<Course> courses )
+    public void setListCourse(ArrayList<String> courses)
     {
-        coursesList.setListData((Course[])courses.toArray( ));
+        coursesList.setListData((String[])courses.toArray());
     }
 
 }
