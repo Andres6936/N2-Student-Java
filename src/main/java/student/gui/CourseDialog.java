@@ -1,5 +1,7 @@
 package student.gui;
 
+import student.domain.Course;
+
 import java.awt.Color;
 import java.util.ArrayList;
 
@@ -18,14 +20,9 @@ public class CourseDialog extends JDialog
     // -----------------------------------------------------------------
 
     /**
-     * The pane used to contain the list
-     */
-    private JScrollPane displacementScroll;
-
-    /**
      * List where courses are shown
      */
-    private JList coursesList;
+    private final JList<Course> coursesList;
 
     // -----------------------------------------------------------------
     // Constructor methods
@@ -37,16 +34,18 @@ public class CourseDialog extends JDialog
     {
         setBackground( Color.white );
         setTitle( "Courses" );
-        displacementScroll = new JScrollPane( );
+
+        // The pane used to contain the list
+        JScrollPane displacementScroll = new JScrollPane();
 
         // List where the courses will be contained
-        coursesList = new JList( );
+        coursesList = new JList<>( );
         coursesList.setSelectionMode( javax.swing.ListSelectionModel.SINGLE_SELECTION );
 
         // Scroll which will show the courses list
         displacementScroll.setVerticalScrollBarPolicy( javax.swing.JScrollPane.VERTICAL_SCROLLBAR_ALWAYS );
         displacementScroll.setViewportView( coursesList );
-        add( displacementScroll );
+        add(displacementScroll);
     }
 
     // -----------------------------------------------------------------
@@ -57,9 +56,9 @@ public class CourseDialog extends JDialog
      * Modifies the courses list shown
      * @param courses the list with the courses that will be shown in the List
      */
-    public void setListCourse( ArrayList courses )
+    public void setListCourse( ArrayList<Course> courses )
     {
-        coursesList.setListData( courses.toArray( ) );
+        coursesList.setListData((Course[])courses.toArray( ));
     }
 
 }
