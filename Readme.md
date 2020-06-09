@@ -37,4 +37,6 @@ nota e indicar si está en prueba académica.
 
 # Interfaz GUI
 
-![GUI](docs/specs/InterfazGUI.jpg)
+<p align="center">
+    <img src="docs/specs/Interface.png" alt="Interface">
+</p>

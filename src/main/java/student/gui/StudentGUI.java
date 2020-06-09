@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
+import com.formdev.flatlaf.FlatIntelliJLaf;
 import student.domain.Student;
 import student.domain.Course;
 
@@ -409,6 +410,7 @@ public class StudentGUI extends JFrame
      */
     public static void main( String[] args )
     {
+        FlatIntelliJLaf.install();
         StudentGUI i = new StudentGUI( );
         i.setVisible( true );
     }
