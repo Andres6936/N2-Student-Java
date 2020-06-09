@@ -180,14 +180,7 @@ public class Student
     public boolean subjectInPensum( String courseCode )
     {
         Course aux = courseSearch( courseCode );
-        if( aux != null )
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return aux != null;
     }
 
     /**
@@ -197,14 +190,7 @@ public class Student
     public boolean studentInAcademicTestPeriod( )
     {
         double average = getStudentAverage( );
-        if( average < 3.25 )
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return average < 3.25;
 
     }
 
@@ -215,14 +201,7 @@ public class Student
      */
     public boolean hasCompletedCourses( )
     {
-        if( course1 == null || course2 == null || course3 == null || course4 == null || course5 == null )
-        {
-            return false;
-        }
-        else
-        {
-            return true;
-        }
+        return course1 != null && course2 != null && course3 != null && course4 != null && course5 != null;
     }
 
     /**

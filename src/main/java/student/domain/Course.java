@@ -11,12 +11,12 @@ public class Course
     /**
      * Course's code
      */
-    private String courseCode;
+    private final String courseCode;
 
     /**
      * Course's name
      */
-    private String courseName;
+    private final String courseName;
 
     /**
      * Course's number of credits
@@ -120,9 +120,6 @@ public class Course
      */
     public boolean isGraded( )
     {
-        if( grade == 0.0 )
-            return false;
-        else
-            return true;
+        return grade != 0.0;
     }
 }
