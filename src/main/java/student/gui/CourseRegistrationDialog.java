@@ -20,12 +20,7 @@ public class CourseRegistrationDialog extends JDialog
     /**
      * Register form
      */
-    private CourseRegistrationPane courseRegistrationPane;
-
-    /**
-     * Register buttons
-     */
-    private CourseRegistrationButtonsPane courseRegistrationButtonsPane;
+    private final CourseRegistrationPane courseRegistrationPane;
 
     // -----------------------------------------------------------------
     // Attributes
@@ -45,14 +40,16 @@ public class CourseRegistrationDialog extends JDialog
     public CourseRegistrationDialog( )
     {
 
-        setTitle( "Course Registration" );
-        setBackground( Color.white );
-        setLayout( new BorderLayout( ) );
-        courseRegistrationPane = new CourseRegistrationPane( );
-        courseRegistrationButtonsPane = new CourseRegistrationButtonsPane( this );
-        add( courseRegistrationPane, BorderLayout.CENTER );
-        add( courseRegistrationButtonsPane, BorderLayout.SOUTH );
-        setSize( 250, 250 );
+        setTitle("Course Registration");
+        setBackground(Color.white);
+        setLayout(new BorderLayout());
+        courseRegistrationPane = new CourseRegistrationPane();
+
+        // Register buttons
+        CourseRegistrationButtonsPane courseRegistrationButtonsPane = new CourseRegistrationButtonsPane(this);
+        add(courseRegistrationPane, BorderLayout.CENTER);
+        add(courseRegistrationButtonsPane, BorderLayout.SOUTH);
+        setSize(250, 250);
         course = null;
 
     }
