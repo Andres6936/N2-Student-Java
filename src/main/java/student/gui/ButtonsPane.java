@@ -34,51 +34,13 @@ public class ButtonsPane extends JPanel implements ActionListener
     private static final String SEE = "SEE_COURSES";
 
     // -----------------------------------------------------------------
-    // GUI Attributes
-    // -----------------------------------------------------------------
-
-    /**
-     * Button to calculate the grades average
-     */
-    private JButton calculateButton;
-
-    /**
-     * Button to make a course registration
-     */
-    private JButton courseRegistrationButton;
-
-    /**
-     * Button to register a gradeB
-     */
-    private JButton gradeRegistrationButton;
-
-    /**
-     * Button for the extension point number 1
-     */
-    private JButton option1Button;
-
-    /**
-     * Button for the extension point number 2
-     */
-    private JButton option2Button;
-
-    /**
-     * Button to know if a course is in the pensum
-     */
-    private JButton subjectCoursedButton;
-
-    /**
-     * Button to see the courses list
-     */
-    private JButton seeCoursesButton;
-
-    // -----------------------------------------------------------------
     // Attributes
     // -----------------------------------------------------------------
+
     /**
      * Instance of the GUI's principal class
      */
-    private StudentGUI father;
+    private final StudentGUI father;
 
     // -----------------------------------------------------------------
     // Constructor methods
@@ -91,38 +53,49 @@ public class ButtonsPane extends JPanel implements ActionListener
     {
         father = theFather;
         // Button initialization
-        calculateButton = new JButton( );
 
-        courseRegistrationButton = new JButton( );
+        // Button to calculate the grades average
+        JButton calculateButton = new JButton();
 
-        gradeRegistrationButton = new JButton( );
+        // Button to make a course registration
+        JButton courseRegistrationButton = new JButton();
 
-        option1Button = new JButton( );
-        option2Button = new JButton( );
-        subjectCoursedButton = new JButton( );
-        seeCoursesButton = new JButton( );
+        // Button to register a gradeB
+        JButton gradeRegistrationButton = new JButton();
 
-        initializeButtons( calculateButton, "Academic test period?", TEST, Color.BLACK, KeyEvent.VK_C );
-        initializeButtons( courseRegistrationButton, "Course registration", COURSEREGISTRATION, Color.BLACK, KeyEvent.VK_N );
-        initializeButtons( gradeRegistrationButton, "Grade registration", GRADEREGISTRATION, Color.BLACK, KeyEvent.VK_O );
-        initializeButtons( option1Button, "Option 1", OPTION1, Color.BLACK, KeyEvent.VK_1 );
-        initializeButtons( option2Button, "Option 2", OPTION2, Color.BLACK, KeyEvent.VK_2 );
-        initializeButtons( subjectCoursedButton, "Is course in pensum?", COURSE_PENSUM, Color.BLACK, KeyEvent.VK_Y );
-        initializeButtons( seeCoursesButton, "See Courses", SEE, Color.BLACK, KeyEvent.VK_V );
-        setLayout( new GridLayout( 5, 2 ) );
+        // Button for the extension point number 1
+        JButton option1Button = new JButton();
 
-        add( new JLabel( "" ) );// label to generate order in the Grid
-        add( calculateButton );
+        // Button for the extension point number 2
+        JButton option2Button = new JButton();
 
-        add( courseRegistrationButton );
+        // Button to know if a course is in the pensum
+        JButton subjectCoursedButton = new JButton();
 
-        add( gradeRegistrationButton );
-        add( subjectCoursedButton );
-        add( seeCoursesButton );
+        // Button to see the courses list
+        JButton seeCoursesButton = new JButton();
 
-        add( option1Button );
-        add( option2Button );
-        add( new JLabel( "" ) );// label to generate order in the Grid
+        initializeButtons(calculateButton, "Academic test period?", TEST, Color.BLACK, KeyEvent.VK_C);
+        initializeButtons(courseRegistrationButton, "Course registration", COURSEREGISTRATION, Color.BLACK, KeyEvent.VK_N);
+        initializeButtons(gradeRegistrationButton, "Grade registration", GRADEREGISTRATION, Color.BLACK, KeyEvent.VK_O);
+        initializeButtons(option1Button, "Option 1", OPTION1, Color.BLACK, KeyEvent.VK_1);
+        initializeButtons(option2Button, "Option 2", OPTION2, Color.BLACK, KeyEvent.VK_2);
+        initializeButtons(subjectCoursedButton, "Is course in pensum?", COURSE_PENSUM, Color.BLACK, KeyEvent.VK_Y);
+        initializeButtons(seeCoursesButton, "See Courses", SEE, Color.BLACK, KeyEvent.VK_V);
+        setLayout(new GridLayout(5, 2));
+
+        add(new JLabel(""));// label to generate order in the Grid
+        add(calculateButton);
+
+        add(courseRegistrationButton);
+
+        add(gradeRegistrationButton);
+        add(subjectCoursedButton);
+        add(seeCoursesButton);
+
+        add(option1Button);
+        add(option2Button);
+        add(new JLabel(""));// label to generate order in the Grid
     }
 
     // -----------------------------------------------------------------
