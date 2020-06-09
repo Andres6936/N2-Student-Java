@@ -1,4 +1,4 @@
-package edu.jabs.student.domain;
+package main.java.student.domain;
 
 /**
  * Class modeling a course

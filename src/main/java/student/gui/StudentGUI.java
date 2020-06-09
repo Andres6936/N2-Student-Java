@@ -1,4 +1,4 @@
-package edu.jabs.student.gui;
+package main.java.student.gui;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
@@ -10,8 +10,8 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-import edu.jabs.student.domain.Student;
-import edu.jabs.student.domain.Course;
+import main.java.student.domain.Student;
+import main.java.student.domain.Course;
 
 /**
  * Main window of the Student's GUI

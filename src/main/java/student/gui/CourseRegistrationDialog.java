@@ -1,4 +1,4 @@
-package edu.jabs.student.gui;
+package main.java.student.gui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -6,7 +6,7 @@ import java.awt.Color;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 
-import edu.jabs.student.domain.Course;
+import main.java.student.domain.Course;
 
 /**
  * Dialog for a course registration

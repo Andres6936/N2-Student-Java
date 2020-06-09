@@ -1,4 +1,4 @@
-package edu.jabs.student.gui;
+package main.java.student.gui;
 
 import java.awt.GridLayout;
 

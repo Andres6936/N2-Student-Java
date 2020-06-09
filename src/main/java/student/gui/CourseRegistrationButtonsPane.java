@@ -1,4 +1,4 @@
-package edu.jabs.student.gui;
+package main.java.student.gui;
 
 import java.awt.Color;
 import java.awt.GridLayout;
@@ -10,61 +10,62 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 /**
- * Pane which contains the button for a grade allocation
+ * Pane that creates the button for a course registration
  */
-public class GradeRegistrationButtonsPane extends JPanel implements ActionListener
+public class CourseRegistrationButtonsPane extends JPanel implements ActionListener
 {
+
     // -----------------------------------------------------------------
     // Constants
     // -----------------------------------------------------------------
 
-    private static final String REGISTER = "GRADE_REGISTRATION";
-
     private static final String CANCEL = "CANCEL";
+
+    private static final String ACCEPT = "ACCEPT";
 
     // -----------------------------------------------------------------
     // GUI's attributes
     // -----------------------------------------------------------------
 
     /**
-     * Button to register the grade
-     */
-    private JButton registerButton;
-
-    /**
-     * Button to cancel
+     * Cancel button
      */
     private JButton cancelButton;
+
+    /**
+     * Accept button
+     */
+    private JButton acceptButton;
 
     // -----------------------------------------------------------------
     // Attributes
     // -----------------------------------------------------------------
-
     /**
-     * Instance of the Container Dialog Class
+     * Instance of the dialog to which it belongs
      */
-    private CourseGradeDialog father;
+    private CourseRegistrationDialog father;
 
     // -----------------------------------------------------------------
     // Constructor methods
     // -----------------------------------------------------------------
     /**
-     * Creates the pane where the grade registration button will be located
+     * Creates the pane where the button to register the course is created
      * @param theFather - instance of the container dialog - theFather!=null
      */
-    public GradeRegistrationButtonsPane( CourseGradeDialog theFather )
+    public CourseRegistrationButtonsPane( CourseRegistrationDialog theFather )
     {
         father = theFather;
 
-        registerButton = new JButton( );
+        acceptButton = new JButton( );
         cancelButton = new JButton( );
 
-        initializeButtons( registerButton, "Grade Registration", REGISTER, Color.BLACK, KeyEvent.VK_A );
+        initializeButtons( acceptButton, "Register", ACCEPT, Color.BLACK, KeyEvent.VK_E );
         initializeButtons( cancelButton, "Cancel", CANCEL, Color.BLACK, KeyEvent.VK_R );
+
         setLayout( new GridLayout( 1, 2, 1, 8 ) );
 
-        // add the buttons
-        add( registerButton );
+        // Add the buttons
+        add( acceptButton );
         add( cancelButton );
 
     }
@@ -103,10 +104,17 @@ public class GradeRegistrationButtonsPane extends JPanel implements ActionListen
     {
         String actionCommand = event.getActionCommand( );
 
-        if( REGISTER.equals( actionCommand ) )
-            father.courseGradeRegistration( );
-        else if( CANCEL.equals( actionCommand ) )
+        if( ACCEPT.equals( actionCommand ) )
+        {
+            father.register( );
+
+        }
+        if( CANCEL.equals( actionCommand ) )
+        {
             father.cancel( );
+
+        }
+
     }
 
 }
